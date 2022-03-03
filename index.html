@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{Client}} Monthly Report</title>
+    <style>
+      /*  @import "./style/fonts/webfontkit-20220227-093443/stylesheet.css"; */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 842px;
+    width: 595px;
+    /* to centre page on screen*/
+    margin-left: auto;
+    margin-right: auto;
+font-family: brandon_textregular;
+}
+header{
+    border-bottom: 0.5px solid #DDE1E6;
+}
+.logo-container{
+    margin-top: 16px;
+    margin-left: 32px;
+    margin-bottom: 16px ;
+    
+}
+.logo {
+    width: 33.72px;
+    height: 20.94px;
+}
+
+.info-section{
+    display: -webkit-box; /* wkhtmltopdf uses this one */
+    -webkit-box-pack: center; /* wkhtmltopdf uses this one */
+    display: flex;
+    margin-top: 16px;
+    
+    
+}
+.info-container{
+    background-color: #2F83DE    ;
+    width: 351px;
+    height: 102px;
+    padding: 24px 16px;
+    color: #fff;
+
+}
+.date{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-family: brandon_textthin;
+
+}
+.title{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    font-family: brandon_textregular;
+    margin-top: 10px;
+}
+.company-logo-container{
+    margin-left: 32px;
+    margin-top: 8px;
+}
+.company-logo-container img{
+    width: 130px;
+    height: auto;
+}
+.general-container{
+    background-color: #47525E;
+    height: 30px;
+    display: flex;
+    margin-top: 16px;
+
+}
+.smalldiv{
+    width: 4px;
+    height: 30px;
+    background-color: #2F83DE;
+}
+.section-title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 6px;
+    margin-left: 8px ;
+    
+}
+
+.metric-row{
+    margin-top: 16px;
+    display: flex;
+    display: -webkit-box; /* wkhtmltopdf uses this one */
+    -webkit-box-pack: center; /* wkhtmltopdf uses this one */
+    
+}
+.metrics-element{
+    border: 1px solid #C7D1DC;
+    width: 132px;
+height: 57px;
+margin-right: 10px ;
+
+}
+.metric-title{
+    font-weight: 500;
+font-size: 10px;
+margin-left: 6px;
+margin-top: 3px;
+}
+
+.metric-value{
+    font-weight: 800;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+}
+.kpi3{
+    width: 311px;
+}
+
+table{
+    border: 1px solid;
+    border-radius: 2px;
+}
+
+.table-container{
+    margin-top: 16px;
+}
+    </style>
+<body>
+    <header>
+        <div class="logo-container">
+            <img class="logo" src="data:image/png;base64,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" alt="Wonder Logo">
+        </div>
+    </header>
+    <div class="info-section">
+       
+        <div class="info-container">
+            <div class="date">
+                <p class="date" >Report for {{report_date}}</p>
+            </div>
+            <p class="title" >{{client_name}} Analytics Report</p>
+        </div>
+        <div class="company-logo-container">
+            <img src="https://www.thediversitycouncil.com/wp-content/uploads/2018/10/McKinsey-1200x628-1.png " alt="client logo">
+        </div>
+    </div>
+    <div class="general-container">
+        <div class="smalldiv"></div>
+        <p class="section-title"> general overview</p>
+    </div>
+    <div class="metrics-container">
+        <div class="metric-row">
+            <div class="metrics-element kpi1">
+                <div class="metric-title">
+                    <p>NUMBER OF USERS</p>
+                </div>
+                <div class="metric-value">
+                    <p>{{total_users}}</p>
+                </div>
+            </div>
+            <div class="metrics-element kpi1">
+                <div class="metric-title">
+                    <p>REASEARCH HOURS</p>
+                </div>
+                <div class="metric-value">
+                    <p>{{research_hours}}</p>
+                </div>
+            </div>
+            <div class="metrics-element kpi3">
+                <div class="metric-title">
+                    <p>TOTAL DOLLARS SAVED </p>
+                </div>
+                <div class="metric-value">
+                    <p>{{dollars_saved}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="metric-row">
+            <div class="metrics-element kpi1">
+                <div class="metric-title">
+                    <p>NUMBER OF PROJECTS</p>
+                </div>
+                <div class="metric-value">
+                    <p>{{num_projects}}</p>
+                </div>
+            </div>
+            <div class="metrics-element kpi1">
+                <div class="metric-title">
+                    <p>TOTAL SPENT</p>
+                </div>
+                <div class="metric-value">
+                    <p>{{net_grv}}</p>
+                </div>
+            </div>
+            <div class="metrics-element kpi3">
+                <div class="metric-title">
+                    <p>BUSINESS DAYS BACK</p>
+                </div>
+                <div class="metric-value">
+                    <p>{{days_back}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="general-container">
+        <div class="smalldiv"></div>
+        <p class="section-title"> Monthly overview</p>
+
+    </div>
+    <div class="table-container">
+    <table>{{new_table}}
+    </table>
+    </div>
+</body>
+</html>
