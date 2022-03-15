@@ -30,29 +30,29 @@
             display: -webkit-box;
             /* wkhtmltopdf uses this one */
             /*    -webkit-box-pack: center;  wkhtmltopdf uses this one */
-            vertical-align: middle;
+    /*        vertical-align: middle; */
+    padding-bottom: 4px;
         }
 
         .seperator {
-            height: 24px;
+            height: 20px;
             width: 1px;
             background-color: #98A5B2;
-            margin-top: 26px;
+            margin-top: 4px;
             margin-left: 10px;
         }
 
         .company-logo-container {
             background-color: #fff;
-
-
-            display: table-cell;
+          /*  display: table-cell;
             vertical-align: middle;
-            text-align: center;
+            text-align: center; */
 
         }
 
         .company-logo-container img {
-            height: 72px
+            height: 24px;
+            margin-left: 10px;
         }
 
         .row2 div {
@@ -60,14 +60,12 @@
         }
 
         .logo-container {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
+         
 
         }
 
         .logo {
-            height: 30px;
+            height: 24px;
         }
 
         .info-section {
@@ -403,12 +401,13 @@
     <div class="charts-container">
         <div class="chart">
 
-            {{users}}
+            <img src={{users}} alt="users_chart">
 
         </div>
         <div class="chart">
 
-            {{days}}
+            <img src={{days}} alt="days_chart">
+
         </div>
     </div>
     </div>
