@@ -30,8 +30,8 @@
             display: -webkit-box;
             /* wkhtmltopdf uses this one */
             /*    -webkit-box-pack: center;  wkhtmltopdf uses this one */
-    /*        vertical-align: middle; */
-    padding-bottom: 4px;
+            /*        vertical-align: middle; */
+            padding-bottom: 4px;
         }
 
         .seperator {
@@ -44,7 +44,7 @@
 
         .company-logo-container {
             background-color: #fff;
-          /*  display: table-cell;
+            /*  display: table-cell;
             vertical-align: middle;
             text-align: center; */
 
@@ -56,13 +56,10 @@
         }
 
         .row2 div {
-            width: 144px;
+            width: 149px;
         }
 
-        .logo-container {
-         
 
-        }
 
         .logo {
             height: 24px;
@@ -75,8 +72,31 @@
             /* wkhtmltopdf uses this one */
             display: flex;
             margin-top: 16px;
+           
+        }
+        .title-container{
+            font-size: 11px;
+        }
+        .notes-container{
+            font-size: 10px;
+            width: 80%;
+            margin-left: 8px;
+            
+        }
+        .bold {
+            font-weight: bold;
+        }
 
-
+        .numbers-container {
+            display: -webkit-box;
+            /* wkhtmltopdf uses this one */
+            -webkit-box-pack: center;
+            /* wkhtmltopdf uses this one */
+            display: flex;
+            line-height: 14.5px;
+            background-color: #ECF7FD;
+            padding: 8px 16px;
+            margin: 8px 0px 16px 0px;
         }
 
         .info-container {
@@ -104,10 +124,9 @@
         .general-container {
             background-color: #47525E;
             height: 30px;
-            display: flex;
             margin-top: 16px;
-            display: -webkit-box;
-            /* wkhtmltopdf uses this one */
+text-align: center;
+
         }
 
         .charts-container {
@@ -136,14 +155,11 @@
             text-transform: uppercase;
             font-weight: 700;
             font-size: 13px;
-            margin-top: 6px;
-            margin-left: 250px;
+            padding-top: 6px;
 
         }
 
-        .second-section-title {
-            margin-left: 260px;
-        }
+    
 
         .metric-row {
             margin-top: 16px;
@@ -158,22 +174,37 @@
             border: 1px solid #C7D1DC;
             width: 194px;
             height: 57px;
-            margin-right: 6px;
+            text-align: center;
+            border-right: none;
+        }
+        .metrics-element:nth-child(1) {
+            
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+
+
+        }
+        .metrics-element:nth-child(4) {
+            border: 1px solid #C7D1DC;
+            height: 57px;
+            text-align: center;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+
 
         }
 
         .metric-title {
             font-weight: 500;
             font-size: 10px;
-            margin-left: 6px;
             margin-top: 3px;
+            color: #697787;
         }
 
         .metric-value {
             font-weight: 800;
             font-size: 20px;
             line-height: 30px;
-            text-align: center;
         }
 
         .kpi3 {
@@ -284,7 +315,7 @@
             text-align: center;
             vertical-align: middle;
         }
-        
+
         .definitions-container {
             margin-top: 16px;
         }
@@ -294,25 +325,22 @@
             line-height: 1.5;
         }
 
-        /*      @media print {
+            @media print {
   .new-page {
     page-break-before: always;
-  } */
+  } }
     </style>
 
 <body>
     <header>
         <div class="logo-container">
-            <img class="logo"
-                src="https://askwonder.com/assets/images/logo.blue.png"
-                alt="Wonder Logo">
+            <img class="logo" src="https://askwonder.com/assets/images/logo.blue.png" alt="Wonder Logo">
         </div>
         <div class="seperator">
 
         </div>
         <div class="company-logo-container">
-            <img src="{{client_logo}}"
-                alt="client logo">
+            <img src="{{client_logo}}" alt="client logo">
         </div>
     </header>
     <div class="info-section">
@@ -330,20 +358,38 @@
 
     </div>
     <div class="general-container">
-        <div class="smalldiv"></div>
         <p class="section-title"> overview</p>
+    </div>
+    <div class="numbers-container">
+        <div class="title-container">
+            <p class="bold">
+                By the numbers
+            </p>
+        </div>
+        <div class="notes-container">
+            <li>
+                In the past month, your company got <span class="bold"> {{days}} business days back*</span> and saved <span class="bold">{{dollars_saved}} dollars** </span> by using Wonder for
+                your research needs.
+
+            </li>
+            <li>
+                Your company's peak* throughput in a 24 hour period was <span class="bold"> {{peak_hours}}  hours ***</span> of research.
+            </li>
+
+        </div>
     </div>
     <div class="metrics-container">
         <div class="metric-row row2">
-            <div class="metrics-element kpi1">
+            <div class="metrics-element ">
                 <div class="metric-title">
                     <p>REASEARCH HOURS</p>
                 </div>
                 <div class="metric-value">
                     <p>{{research_hours}}</p>
+                    
                 </div>
             </div>
-            <div class="metrics-element kpi1">
+            <div class="metrics-element ">
                 <div class="metric-title">
                     <p>NUMBER OF PROJECTS</p>
                 </div>
@@ -351,7 +397,7 @@
                     <p>{{num_projects}}</p>
                 </div>
             </div>
-            <div class="metrics-element kpi1">
+            <div class="metrics-element ">
                 <div class="metric-title">
                     <p>NUMBER OF USERS</p>
                 </div>
@@ -359,7 +405,7 @@
                     <p>{{total_users}}</p>
                 </div>
             </div>
-            <div class="metrics-element kpi1">
+            <div class="metrics-element">
                 <div class="metric-title">
                     <p>TOTAL SPENT</p>
                 </div>
@@ -370,33 +416,20 @@
 
         </div>
     </div>
-    <div class="metric-row">
+    <div class="definitions-container">
+        <p>
+            * Business Days Back = hours of research done across a given time period, divided by 9 hours in a business
+            day<br>** Dollars Saved = Dollar amount it would take a client to perform requisite research (assuming a flat rate
+            of $125 per hour) over a given time period minus dollar amount it would take for Wonder to perform the same
+            amount of requisite research
+             <br>
 
-        <div class="metrics-element kpi1">
-            <div class="metric-title">
-                <p>PEAK HOURS * </p>
-            </div>
-            <div class="metric-value">
-                <p>{{peak_hours}}</p>
-            </div>
-        </div>
-        <div class="metrics-element kpi1 blue-background">
-            <div class="metric-title">
-                <p>BUSINESS DAYS BACK **</p>
-            </div>
-            <div class="metric-value">
-                <p>{{days_back}}</p>
-            </div>
-        </div>
-        <div class="metrics-element kpi1 blue-background">
-            <div class="metric-title">
-                <p>TOTAL DOLLARS SAVED *** </p>
-            </div>
-            <div class="metric-value">
-                <p>{{dollars_saved}}</p>
-            </div>
-        </div>
-
+            *** Peak Man Hours = The most hours researched in a given day 
+        </p>
+    </div>
+    <div class="general-container">
+        
+        <p class="section-title"> MONTHLY COMPARAISON</p>
     </div>
     <div class="charts-container">
         <div class="chart">
@@ -412,7 +445,6 @@
     </div>
     </div>
     <div class="general-container new-page">
-        <div class="smalldiv"></div>
         <p class="section-title second-section-title "> USAGE</p>
 
     </div>
@@ -420,17 +452,7 @@
         {{new_table}}
 
     </div>
-    <div class="definitions-container">
-        <p>
-            * Peak Man Hours = The most hours researched in a given day <br>
-            ** Business Days Back = hours of research done across a given time period, divided by 9 hours in a business
-            day <br>
-
-            *** Dollars Saved = Dollar amount it would take a client to perform requisite research (assuming a flat rate
-            of $125 per hour) over a given time period minus dollar amount it would take for Wonder to perform the same
-            amount of requisite research
-        </p>
-    </div>
+    
 </body>
 
 </html>
