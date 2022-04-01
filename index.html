@@ -320,7 +320,11 @@ text-align: center;
             font-size: 9px;
             line-height: 1.5;
         }
-
+        .bottom-note{
+            margin-left: 390px;
+            font-size: 10px;
+            font-style: italic;
+        }
             @media print {
   .new-page {
     page-break-before: always;
@@ -364,14 +368,14 @@ text-align: center;
         </div>
         <div class="notes-container">
             <li>
-                In the past month, your company got <span class="bold"> {{days_back}} business days back*</span> and saved <span class="bold">{{dollars_saved}} ** </span> by using Wonder for
+                In the past month, your company got <span class="bold"> {{days_back}} business days back</span> and saved <span class="bold">{{dollars_saved}} </span> by using Wonder for
                 your research needs.
 
             </li>
             <li>
-                Your company's peak* throughput in a 24 hour period was <span class="bold"> {{peak_hours}}  hours ***</span> of research.
+                Your company's peak throughput in a 24 hour period was <span class="bold"> {{peak_hours}}  hours</span> of research.
             </li>
-
+            <p class="bottom-note">More details at the end of the report.</p>
         </div>
     </div>
     <div class="metrics-container">
@@ -438,13 +442,9 @@ text-align: center;
     </div>
     <div class="definitions-container">
         <p>
-            * Business Days Back = hours of research done across a given time period, divided by 9 hours in a business
-            day<br>** Dollars Saved = Dollar amount it would take a client to perform requisite research (assuming a flat rate
-            of $125 per hour) over a given time period minus dollar amount it would take for Wonder to perform the same
-            amount of requisite research
-             <br>
-
-            *** Peak Man Hours = The most hours researched in a given day 
+            <li>Business days back measured by the amount of time in full, nine hour business days, that your team saved by using Wonder</li>
+            <li>Dollars saved measured by the cost of performing research in-house (assuming a <a href="https://www.toptal.com/freelance/don-t-be-fooled-the-real-cost-of-employees-and-consultants">fully loaded cost</a> of $125/hour) minus the cost of leveraging Wonder for the same amount of research</li>
+            <li>Peak research throughput measured by the most hours researched in a 24-hour period to flex your team size on demand</li>
         </p>
     </div>
     
