@@ -79,14 +79,16 @@
             margin-bottom: 4px;
         }
         .notes-container{
-            font-size: 14px;
+            font-size: 12px;
             line-height: 1.3;
                 
         }
         .bold {
             font-weight: bold;
         }
-
+        .bold2 {
+            font-weight: bold;
+        }
         .numbers-container {
 
             line-height: 14.5px;
@@ -321,8 +323,8 @@ text-align: center;
             line-height: 1.5;
         }
         .bottom-note{
-            margin-left: 360px;
-            margin-top: 8px;
+           
+            float: right;
             font-size: 10px;
             font-style: italic;
         }
@@ -375,19 +377,19 @@ text-align: center;
         </div>
         <div class="notes-container">
             <li>
-                In the past month, your company got <span class="bold"> {{days_back}} business days back</span> and saved <span class="bold">{{dollars_saved}} </span> by using Wonder for
+                In the past month, your company got <span class=""> {{days_back}} business days back</span> and saved <span class="">{{dollars_saved}} </span> by using Wonder for
                 your research needs.
 
             </li>
             <li>
-                Your company's peak throughput in a 24 hour period was <span class="bold"> {{peak_hours}}  hours</span> of research.
+                Your company's peak throughput in a 24 hour period was <span class=""> {{peak_hours}}  hours</span> of research.
             </li>
-            <p class="bottom-note">More details at the end of the report.</p>
+           
                    
 
     <div class="title-container">
         <p class="bold">
-            In that time, you could have...
+            With the time you saved you could have
         </p>
     </div>
     <div class="notes-container">
@@ -400,7 +402,7 @@ text-align: center;
         
         
            <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f697.png">	{{driving_phrase}} {{driving_number}} times. 
-       
+           <p class="bottom-note">More details at the end of the report</p>
        </ul>
     
 </div>
