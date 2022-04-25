@@ -323,12 +323,12 @@ text-align: center;
             line-height: 1.5;
         }
         .bottom-note{
-            display: -webkit-box; /* wkhtmltopdf uses this one */
             display: flex;
            margin-top: 8px;
             font-size: 10px;
             -webkit-box-pack: end; /* wkhtmltopdf uses this one */
             justify-content: end;
+            margin-right: 30px;
         }
         ul img{
             width: 13px;
@@ -393,7 +393,7 @@ text-align: center;
         <div class="notes-container">
             <li>
                 
-                Your company got<span class="bold"> {{days_back}}</span> business days back and saved <span class="bold">${{dollars_saved}}</span> by using Wonder for your research needs in <span class="bold">{{month}}</span>.
+                Your company got<span class="bold"> {{days_back}}</span> business days back and saved <span class="bold">{{dollars_saved}}</span> by using Wonder for your research needs in <span class="bold">{{month}}</span>.
             </li>
             <li>
                 Your peak throughput over a 24 hour period was <span class="bold">{{peak_hours}}</span> hours of research.
