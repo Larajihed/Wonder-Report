@@ -72,30 +72,39 @@
             /* wkhtmltopdf uses this one */
             display: flex;
             margin-top: 16px;
-           
+
         }
-        .title-container{
+
+        .title-container {
             margin-bottom: 4px;
         }
-        .yellow .title-container p{
+
+        .yellow .title-container p {
             line-height: 16px;
         }
-        .notes-container{
+
+        .notes-container {
             font-size: 12px;
             line-height: 16px;
             padding-left: 8px;
-                
+
         }
-        li span{
-            display:inline;
-    margin-left:-0.6em;
+        .metric-value{
+            margin-top: 3px;
         }
+        li span {
+            display: inline;
+            margin-left: -5px;
+        }
+
         .bold {
             font-weight: bold;
         }
+
         .bold2 {
             font-weight: bold;
         }
+
         .numbers-container {
             line-height: 14.5px;
             background-color: #ECF7FD;
@@ -111,14 +120,10 @@
             display: flex;
         }
 
-
-
         .date {
             font-size: 14px;
             text-transform: uppercase;
-
         }
-
 
         .title {
             font-weight: 600;
@@ -130,14 +135,12 @@
             background-color: #47525E;
             height: 30px;
             margin-top: 16px;
-text-align: center;
-
+            text-align: center;
         }
 
         .charts-container {
             display: flex;
             display: -webkit-box;
-
         }
 
         .chart {
@@ -164,7 +167,7 @@ text-align: center;
 
         }
 
-    
+
 
         .metric-row {
             margin-top: 8px;
@@ -182,13 +185,15 @@ text-align: center;
             text-align: center;
             border-right: none;
         }
+
         .metrics-element:nth-child(1) {
-            
+
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;
 
 
         }
+
         .metrics-element:nth-child(4) {
             border: 1px solid #C7D1DC;
             height: 57px;
@@ -329,40 +334,46 @@ text-align: center;
             font-size: 9px;
             line-height: 1.5;
         }
-        .bottom-note{
+
+        .bottom-note {
             display: flex;
-           margin-top: 8px;
+            margin-top: 8px;
             font-size: 10px;
-             /* wkhtmltopdf uses this one */
-            
+            /* wkhtmltopdf uses this one */
+
             margin-left: 398px;
         }
-        ul img{
+
+        ul img {
             width: 13px;
             vertical-align: text-bottom;
             margin-right: 4px;
         }
-        .yellow{
+
+        .yellow {
             background-color: #FFF8E8;
             padding: 8px;
             border-radius: 6px;
         }
 
-        .yellow p{
+        .yellow p {
             font-size: 12px;
             line-height: 13.5px;
         }
-        .small-title{
-            
+
+        .small-title {
+
             font-size: 12px;
-            color:#697787 ;
+            color: #697787;
         }
-            @media print {
-  .new-page {
-    page-break-before: always;
-  } }
+
+        @media print {
+            .new-page {
+                page-break-before: always;
+            }
+        }
     </style>
- 
+
 <body>
     <header>
         <div class="logo-container">
@@ -372,9 +383,9 @@ text-align: center;
 
         </div>
         <div class="company-logo-container">
-            <img src="{{client_logo}}" alt="client logo"> 
+            <img src="{{client_logo}}" alt="client logo">
         </div>
-        
+
     </header>
     <div class="info-section">
 
@@ -401,40 +412,46 @@ text-align: center;
         </div>
         <div class="notes-container">
             <li>
-                <span>                Your company saved <strong>{{research_hours}}</strong> hours (or <strong>{{dollars_saved}}</strong> ) and <strong>{{days_back}}</strong> business days by using Wonder.                </span>
+                <span> Your company saved <strong>{{research_hours}}</strong> hours (or
+                    <strong>{{dollars_saved}}</strong>) and <strong>{{days_back}}</strong> business days by using
+                    Wonder. </span>
             </li>
             <li>
-                <span>                Your peak throughput over a 24 hour period was <strong>{{peak_hours}}</strong> hours of research.
-            </span>
+                <span> Your peak throughput over a 24 hour period was <strong>{{peak_hours}}</strong> hours of research.
+                </span>
             </li>
-           
+
             <p class="bottom-note">More details at the end of the report</p>
 
 
         </div>
- 
+
     </div>
-<div class="yellow">
-    <div class="title-container">
-        <p>
-            We know your team was hard at work driving forward key initiatives, here's how to put those <span class="bold">{{research_hours}} hours</span> into perspective:
-        </p>
-    </div>
-    <div class="notes-container">
-        <ul class="styled">
-      
-            <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f4fa.png"> {{film_phrase}} <span class="bold">{{film_number}} times</span>.  <br>
+    <div class="yellow">
+        <div class="title-container">
+            <p>
+                Your team was hard at work driving forward key initiatives, here's how to put those <span
+                    class="bold">{{research_hours}} hours</span> into perspective:
+            </p>
+        </div>
+        <div class="notes-container">
+            <ul class="styled">
+
+                <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f4fa.png"> {{film_phrase}} <span
+                    class="bold">{{film_number}} times</span>. <br>
 
 
-            <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f3c6.png" > {{sports_phrase}} <span class="bold">{{sports_number}} times</span>. <br>
-        
-        
-           <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f697.png">	{{driving_phrase}} <span class="bold">{{driving_number}} times</span>. 
-           
-       </ul>
-    
-</div>
-</div>
+                <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f3c6.png"> {{sports_phrase}} <span
+                    class="bold">{{sports_number}} times</span>. <br>
+
+
+                <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f697.png"> {{driving_phrase}} <span
+                    class="bold">{{driving_number}} times</span>.
+
+            </ul>
+
+        </div>
+    </div>
     <div class="metrics-container">
         <div class="metric-row row2">
             <div class="metrics-element ">
@@ -443,7 +460,7 @@ text-align: center;
                 </div>
                 <div class="metric-value">
                     <p>{{research_hours}}</p>
-                    
+
                 </div>
             </div>
             <div class="metrics-element ">
@@ -473,8 +490,8 @@ text-align: center;
 
         </div>
     </div>
-    
-   
+
+
     <div class="charts-container">
         <div class="chart">
 
@@ -488,11 +505,11 @@ text-align: center;
         </div>
     </div>
     </div>
-    
-<!-- ------ new section  -->
+
+    <!-- ------ new section  -->
 
 
-<!-- ----- -->
+    <!-- ----- -->
     <div class="general-container">
         <p class="section-title second-section-title "> USAGE</p>
 
@@ -503,12 +520,17 @@ text-align: center;
     </div>
     <div class="definitions-container">
         <p>
-            <li>Business days back measured by the amount of time in full, nine hour business days, that your team saved by using Wonder</li>
-            <li>Dollars saved measured by the cost of performing research in-house (assuming a <a href="https://www.toptal.com/freelance/don-t-be-fooled-the-real-cost-of-employees-and-consultants">fully loaded cost</a> of $125/hour) minus the cost of leveraging Wonder for the same amount of research</li>
-            <li>Peak research throughput measured by the most hours researched in a 24-hour period to flex your team size on demand</li>
+            <li>Business days back measured by the amount of time in full, nine hour business days, that your team saved
+                by using Wonder</li>
+            <li>Dollars saved measured by the cost of performing research in-house (assuming a <a
+                    href="https://www.toptal.com/freelance/don-t-be-fooled-the-real-cost-of-employees-and-consultants">fully
+                    loaded cost</a> of $125/hour) minus the cost of leveraging Wonder for the same amount of research
+            </li>
+            <li>Peak research throughput measured by the most hours researched in a 24-hour period to flex your team
+                size on demand</li>
         </p>
     </div>
-    
+
 </body>
 
 </html>
