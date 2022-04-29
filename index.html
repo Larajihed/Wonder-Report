@@ -25,7 +25,7 @@
         }
 
         header {
-            border-bottom: 0.5px solid #DDE1E6;
+            border-bottom: 2px solid #DDE1E6;
             display: flex;
             display: -webkit-box;
             /* wkhtmltopdf uses this one */
@@ -83,7 +83,12 @@
         .notes-container{
             font-size: 12px;
             line-height: 16px;
+            padding-left: 8px;
                 
+        }
+        li span{
+            display:inline;
+    margin-left:-0.6em;
         }
         .bold {
             font-weight: bold;
@@ -92,11 +97,11 @@
             font-weight: bold;
         }
         .numbers-container {
-
             line-height: 14.5px;
             background-color: #ECF7FD;
             padding: 8px;
             margin: 8px 0px 8px 0px;
+            border-radius: 6px;
         }
 
         .info-container {
@@ -330,15 +335,17 @@ text-align: center;
             font-size: 10px;
              /* wkhtmltopdf uses this one */
             
-            margin-left: 390px;
+            margin-left: 398px;
         }
         ul img{
             width: 13px;
             vertical-align: text-bottom;
+            margin-right: 4px;
         }
         .yellow{
             background-color: #FFF8E8;
             padding: 8px;
+            border-radius: 6px;
         }
 
         .yellow p{
@@ -394,11 +401,11 @@ text-align: center;
         </div>
         <div class="notes-container">
             <li>
-                
-                Your company got<span class="bold"> {{days_back}}</span> business days back and saved <span class="bold">{{dollars_saved}}</span> by using Wonder.
+                <span>                Your company saved <strong>{{research_hours}}</strong> hours (or <strong>{{dollars_saved}}</strong> ) and <strong>{{days_back}}</strong> business days by using Wonder.                </span>
             </li>
             <li>
-                Your peak throughput over a 24 hour period was <span class="bold">{{peak_hours}}</span> hours of research.
+                <span>                Your peak throughput over a 24 hour period was <strong>{{peak_hours}}</strong> hours of research.
+            </span>
             </li>
            
             <p class="bottom-note">More details at the end of the report</p>
@@ -410,7 +417,7 @@ text-align: center;
 <div class="yellow">
     <div class="title-container">
         <p>
-            We know your team was hard at work driving forward key initiatives, here’s how to put those <span class="bold">{{research_hours}} hours</span> into perspective:
+            We know your team was hard at work driving forward key initiatives, here's how to put those <span class="bold">{{research_hours}} hours</span> into perspective:
         </p>
     </div>
     <div class="notes-container">
