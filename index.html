@@ -268,10 +268,7 @@
 
         }
 
-        td:nth-child(2) {
-            width: 13%;
-            /* text-align: center;*/
-        }
+       
 
         td:nth-child(3) {
             width: 5%;
@@ -376,18 +373,18 @@
     </style>
 
 <body>
+    
     <header>
         <div class="logo-container">
             <img class="logo" src="https://askwonder.com/assets/images/logo.blue.png" alt="Wonder Logo">
         </div>
         <div class="seperator">
-
         </div>
         <div class="company-logo-container">
             <img src="{{client_logo}}" alt="client logo">
         </div>
-
     </header>
+
     <div class="info-section">
 
         <div class="info-container">
@@ -421,7 +418,6 @@
                 <span> Your peak throughput over a 24-hour period was <strong>{{peak_hours}} hours</strong>  of research.
                 </span>
             </li>
-
             <p class="bottom-note">More details at the end of the report</p>
      </div>
 
@@ -429,25 +425,15 @@
     <div class="yellow">
         <div class="title-container">
             <p>
-                Your team was hard at work driving forward key initiatives, here's how to put those <span
-                    class="bold">{{research_hours}} hours</span> in perspective:
+                Your team was hard at work driving forward key initiatives, here's how to put those <spanclass="bold">{{research_hours}} hours</span> in perspective:
             </p>
         </div>
         <div class="notes-container">
             <ul class="styled">
-
-                <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f4fa.png"> {{film_phrase}} <span
-                    class="bold">{{film_number}} times</span>. <br>
-
-
-                <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f3c6.png"> {{sports_phrase}} <span
-                    class="bold">{{sports_number}} times</span>. <br>
-
-
-                <img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f697.png"> {{driving_phrase}} <span
-                    class="bold">{{driving_number}} times</span>.
+                <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f4fa.png">-->    {{film_phrase}} <span class="bold">{{film_number}} times</span>. <br>
+                 <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f3c6.png">--> {{sports_phrase}} <span class="bold">{{sports_number}} times</span>. <br>
+                 <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f697.png">--> {{driving_phrase}} <span class="bold">{{driving_number}} times</span>.
              </ul>
-
         </div>
     </div>
     <div class="metrics-container">
@@ -511,15 +497,13 @@
     </div>
     <div class="table-container ">
         {{new_table}}
-
     </div>
     <div class="definitions-container">
         <p>
             <li>Business days back measured by the amount of time in full, nine hour business days, that your team saved
                 by using Wonder</li>
             <li>Dollars saved measured by the cost of performing research in-house (assuming a <a
-                    href="https://www.toptal.com/freelance/don-t-be-fooled-the-real-cost-of-employees-and-consultants">fully
-                    loaded cost</a> of $125/hour) minus the cost of leveraging Wonder for the same amount of research
+                    href="https://www.toptal.com/freelance/don-t-be-fooled-the-real-cost-of-employees-and-consultants">fully loaded cost</a> of $125/hour) minus the cost of leveraging Wonder for the same amount of research
             </li>
             <li>Peak research throughput measured by the most hours researched in a 24-hour period to flex your team
                 size on demand</li>
