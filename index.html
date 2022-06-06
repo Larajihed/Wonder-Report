@@ -7,13 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{client_name}} Monthly Report</title>
     <style>
+      
         /*  @import "./style/fonts/webfontkit-20220227-093443/stylesheet.css"; */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
+        img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;}
         body {
             height: 842px;
             width: 595px;
@@ -430,9 +435,9 @@
         </div>
         <div class="notes-container">
             <ul class="styled">
-                <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f4fa.png">-->    {{film_phrase}} <span class="bold">{{film_number}} times</span>. <br>
-                 <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f3c6.png">--> {{sports_phrase}} <span class="bold">{{sports_number}} times</span>. <br>
-                 <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f697.png">--> {{driving_phrase}} <span class="bold">{{driving_number}} times</span>.
+                <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f4fa.png">-->   Emoji:😀	 {{film_phrase}} <span class="bold">{{film_number}} times</span>. <br>
+                 <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f3c6.png">--> Hex: &#129409;{{sports_phrase}} <span class="bold">{{sports_number}} times</span>. <br>
+                 <!--<img src="https://emoji.aranja.com/static/emoji-data/img-apple-160/1f697.png">--> Unicode: &#x1F60A;{{driving_phrase}} <span class="bold">{{driving_number}} times</span>.
              </ul>
         </div>
     </div>
@@ -505,11 +510,11 @@
             <li>Dollars saved measured by the cost of performing research in-house (assuming a <a
                     href="https://www.toptal.com/freelance/don-t-be-fooled-the-real-cost-of-employees-and-consultants">fully loaded cost</a> of $125/hour) minus the cost of leveraging Wonder for the same amount of research
             </li>
-            <li>Peak research throughput measured by the most hours researched in a 24-hour period to flex your team
-                size on demand</li>
+            <li>Peak research throughput measured by the most hours researched in a 24-hour period to flex your team size on demand</li>
         </p>
     </div>
-
+    <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+    <script>window.onload = function () { twemoji.parse(document.body);}</script>
 </body>
 
 </html>
